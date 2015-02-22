@@ -1,0 +1,47 @@
+Tae Kim
+Assignment #3
+
+IPython 
+1.	Locate the file that the os.path.abspath function is defined in. Hint: Look for some way to find out more information about a Python object, and find one that tells you about the file that the function is defined in. What is the command you used and the path of the file?  
+os.path.abspath?
+Type:       function
+String Form:<function abspath at 0x7ff3f01539b0>
+File:       /usr/lib/python2.7/posixpath.py
+Definition: os.path.abspath(path)
+Docstring:  Return an absolute path.
+
+
+2.	Use a single shell command to count the number of files in the /etc directory. Once you have the shell command, look at the IPython documentation for a way to run a shell command and assign the result to a variable called “num”. What is the command you used to assign the value to num? 
+%cd /etc
+%pwd
+from IPython.utils.text import SList
+num = !ls -l
+num = int(num.fields(1).s[0:4])
+
+ 
+3.	Print the square root of num. What command did you use, and what is the value?  
+num**2
+1373584
+
+
+4.	Set a variable x = 12345. Calculate the square of x using the following methods: x**2, x*x, or numpy.square(x). Which is the fastest method? Hint: the %timeit line magic will show how long it takes to execute a statement. Also, you must import the numpy library before trying to use any numpy functions.  
+x*x is the fastest
+
+%timeit x**2
+10000000 loops, best of 3: 69.8 ns per loop
+
+%timeit x*x
+10000000 loops, best of 3: 61.3 ns per loop
+
+import numpy
+%timeit numpy.square(x)
+1000000 loops, best of 3: 1.48 µs per loop
+
+
+5.	How many cell magic commands are there?  
+%lsmagic
+24
+   
+
+PyDev 
+Hello World!
